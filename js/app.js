@@ -45,7 +45,7 @@ window.onload = async () => {
       data: {
         labels: dates,
         datasets: [
-            {
+          {
             label: 'sist morning',
             borderColor: 'rgba(0, 128, 0, 0.5)',
             pointBackgroundColor: 'rgba(0, 128, 0, 0.5)',
