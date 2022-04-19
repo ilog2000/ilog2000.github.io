@@ -39,38 +39,40 @@ window.onload = async () => {
     const sistEvening = data.filter(x => x.ampm === 'pm').map((v) => { return { x: v.date, y: v.sist }});
     const diastEvening = data.filter(x => x.ampm === 'pm').map((v) => { return { x: v.date, y: v.diast }});
 
+    const datasets = [
+      {
+        label: 'sist morning',
+        borderColor: 'rgba(0, 128, 0, 0.5)',
+        pointBackgroundColor: 'rgba(0, 128, 0, 0.5)',
+        data: sistMorning
+      },
+      {
+        label: 'diast morning',
+        borderColor: 'rgba(0, 0, 255, 0.5)',
+        pointBackgroundColor: 'rgba(0, 0, 255, 0.5)',
+        data: diastMorning
+      },
+      {
+        label: 'sist evening',
+        borderColor: 'rgba(255, 165, 0, 0.5)',
+        pointBackgroundColor: 'rgba(255, 165, 0, 0.5)',
+        data: sistEvening
+      },
+      {
+        label: 'diast evening',
+        borderColor: 'rgba(255, 0, 255, 0.5)',
+        pointBackgroundColor: 'rgba(255, 0, 255, 0.5)',
+        data: diastEvening
+      }
+    ];
+
     const ctx = document.getElementById('chart').getContext('2d');
     const chart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: dates,
-        datasets: [
-          {
-            label: 'sist morning',
-            borderColor: 'rgba(0, 128, 0, 0.5)',
-            pointBackgroundColor: 'rgba(0, 128, 0, 0.5)',
-            data: sistMorning
-          },
-          {
-            label: 'diast morning',
-            borderColor: 'rgba(0, 0, 255, 0.5)',
-            pointBackgroundColor: 'rgba(0, 0, 255, 0.5)',
-            data: diastMorning
-          },
-          {
-            label: 'sist evening',
-            borderColor: 'rgba(255, 165, 0, 0.5)',
-            pointBackgroundColor: 'rgba(255, 165, 0, 0.5)',
-            data: sistEvening
-          },
-          {
-            label: 'diast evening',
-            borderColor: 'rgba(255, 0, 255, 0.5)',
-            pointBackgroundColor: 'rgba(255, 0, 255, 0.5)',
-            data: diastEvening
-          }
-        ]
-      }
+        datasets,
+      },
     });
   }
 }
