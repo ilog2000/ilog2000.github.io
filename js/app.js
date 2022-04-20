@@ -33,7 +33,7 @@ window.onload = async () => {
   const csv = await getData('Blood pressure.csv');
   if (csv) {
     const data = csv2json(csv);
-    const dates = data.filter(x => x.ampm === 'am').map(v => v.date.toISOString().split('T')[0]);
+    const labels = data.filter(x => x.ampm === 'am').map(v => v.date.toISOString().split('T')[0]);
     const sistMorning = data.filter(x => x.ampm === 'am').map((v) => { return { x: v.date, y: v.sist }});
     const diastMorning = data.filter(x => x.ampm === 'am').map((v) => { return { x: v.date, y: v.diast }});
     const sistEvening = data.filter(x => x.ampm === 'pm').map((v) => { return { x: v.date, y: v.sist }});
@@ -70,7 +70,7 @@ window.onload = async () => {
     const chart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: dates,
+        labels,
         datasets,
       },
     });
