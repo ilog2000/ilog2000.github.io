@@ -1,6 +1,6 @@
 body { font-family: Helvetica, sans-serif; font-size: 18px; line-height: 24px; }
 table, th, td { border: 1px solid; }
-table { width: 100%; max-width: 540px; height: 840px; margin: 0 auto; display: block; overflow-x: auto; border-collapse: collapse; border-spacing: 0; }
+table { width: 100%; max-width: 533px; height: 840px; margin: 0 auto; display: block; overflow-x: auto; border-collapse: collapse; border-spacing: 0; }
 tbody { white-space: nowrap; }
 th, td { padding: 5px 10px; border-top-width: 0; border-left-width: 0; }
 th { position: sticky; top: 0; background: #fff; vertical-align: bottom; }
